@@ -83,33 +83,33 @@
 
 
     
-from sys import stdin
+# from sys import stdin
 
-n = stdin.readline()
-N = sorted(map(int, stdin.readline().split()))
-m = stdin.readline()
-M = map(int, stdin.readline().split())
+# n = stdin.readline()
+# N = sorted(map(int, stdin.readline().split()))
+# m = stdin.readline()
+# M = map(int, stdin.readline().split())
 
 # l: target 숫자
 # N: target과 비교할 숫자들
 # start: N의 시작 번째
 # end: N의 끝 번째
 
-def binary(l, N, start, end):
-    if start> end:
-        return 0
-    m = (start+ end)//2
-    if l == N[m]:
-        return 1
-    elif l < N[m]:
-        return binary(l, N, start, m-1)
-    else:
-        return binary(l, N, m+1, end)
+# def binary(l, N, start, end):
+#     if start> end:
+#         return 0
+#     m = (start+ end)//2
+#     if l == N[m]:
+#         return 1
+#     elif l < N[m]:
+#         return binary(l, N, start, m-1)
+#     else:
+#         return binary(l, N, m+1, end)
 
-for l in M:
-    start = 0
-    end = len(N)-1
-    print(binary(l,N,start, end))
+# for l in M:
+#     start = 0
+#     end = len(N)-1
+#     print(binary(l,N,start, end))
 
 # start와 end에 1을 더해주고 빼주는 이유:
 # 첫번째 (start+end)//2 를 m이라하고
@@ -147,6 +147,55 @@ for l in M:
 # (a+b)가 짝 수일 때와 같은 과정을 적용하면 m과 m2가 같지 않기 위해서는  1>N[m]일 때 1을 빼야 됨을 알 수 있음
 # 따라서 1을 m에 더하고 빼줘야 m2가 m과 다른 값인 m2가 되어서 반복을 하는 걸 알 수 있음
 
+# from sys import stdin, stdout
+# n = stdin.readline()
+# N = set(stdin.readline().split())
+# m = stdin.readline()
+# M = stdin.readline().split()
+
+# for l in M:
+#     stdout.write('1\n') if l in N else stdout.write('0\n')
+
+# set과 dictionary의 in연산자는 시간 복잡도 O(1)임
 
 
 
+
+# from sys import stdin, stdout
+
+
+# n = stdin.readline()
+# N = sorted(list(map(int,stdin.readline().split())))
+# m = int(stdin.readline())
+# M = list(map(int,stdin.readline().split()))
+
+# def binary(l, N, start, end):
+#     if start > end:
+#         return 0
+#     mid = (start + end)//2
+
+#     if l == N[mid]:
+#         return 1
+#     elif l < N[mid]:
+#         return binary(l, N, start, mid-1)
+#     else:
+#         return binary(l, N, mid+1, end)
+
+    
+# for l in M:
+#     start, end = 0, len(N)-1
+#     print(binary(l, N, start, end))
+
+
+
+
+from sys import stdin, stdout
+
+
+n = stdin.readline()
+N = set(stdin.readline().split())
+m = int(stdin.readline())
+M = stdin.readline().split()
+
+for l in M:
+    stdout.write('1\n') if l in N else stdout.write('0\n')
