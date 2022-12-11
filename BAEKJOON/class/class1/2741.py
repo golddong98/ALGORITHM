@@ -11,11 +11,10 @@ from sys import stdout
 print=stdout.write
 
 for i in range(int(input())):
-    print(str(i+1))
+    print(str(i+1)+'\n')
 
 
 
 
 
 
-    
