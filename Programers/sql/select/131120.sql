@@ -1,0 +1,6 @@
+-- 출처:https://school.programmers.co.kr/learn/courses/30/lessons/131120
+
+
+SELECT MEMBER_ID,MEMBER_NAME,GENDER,LEFT(DATE_OF_BIRTH,10)
+FROM MEMBER_PROFILE
+WHERE MID(DATE_OF_BIRTH,6,2)='03' AND GENDER = 'W' AND TLNO NOT IN ('NULL')
