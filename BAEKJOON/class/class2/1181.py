@@ -13,5 +13,4 @@ for _ in range(int(input())):
 
 result = sorted(set(any), key=lambda x: (len(x),x))
 
-for i in range(len(result)):
-    print(result[i])
+print(*result, sep='\n')
