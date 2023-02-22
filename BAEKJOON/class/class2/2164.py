@@ -14,3 +14,8 @@ while len(cards) > 1:
     cards.append(cards.popleft())
 
 print(cards[0]+1)
+
+n, m = int(input()), 1
+while m<n:
+    m *= 2
+print(2*n-m)
